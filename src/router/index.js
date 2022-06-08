@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import ProductView from '../views/ProductView.vue'
 import AboutView from '../views/AboutView.vue'
 import CartView from '../views/CartView.vue'
+import DetailPhone from '../components/phone/DetailPhone.vue'
 import Login from '../views/Login.vue'
 
 import store from '../store'
@@ -13,7 +15,18 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    children: [
+      {
+        path: ':id',
+        component: DetailPhone
+      },
+    ]
+  },
+  {
+    path: '/products',
+    name: 'products',
+    component: ProductView,
   },
   {
     path: '/about',
@@ -25,7 +38,7 @@ const routes = [
     name: 'cart',
     component: CartView,
     meta: {
-      requiresAuth: false,
+      requiresAuth: true,
     },
   },
   {

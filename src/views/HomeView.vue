@@ -30,7 +30,7 @@
                           <v-fade-transition>
                             <v-overlay v-if="hover" absolute color="#036358">
                               <v-btn @click="addCart(product)">
-                                <v-icon>mdi-cart</v-icon>
+                                <v-icon x-large>mdi-cart</v-icon>
                               </v-btn>
                             </v-overlay>
                           </v-fade-transition>

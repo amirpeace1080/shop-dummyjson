@@ -44,7 +44,7 @@
                   <v-icon color="#76FF03">mdi-currency-usd</v-icon>
                   <strong>{{ showProduct.price }}</strong>
                 </p>
-                <a class="buy" href="#" @click="addCart(showProduct)"
+                <a class="buy" @click="addCart(showProduct)"
                   >Buy Now</a
                 >
               </div></v-col
@@ -164,12 +164,9 @@
 </template>
 
 <script>
-// import Navbar from "../Navbar.vue";
 
 export default {
-  components: {
-    // Navbar,
-  },
+  name: 'DetailPhone',
   data() {
     return {
       showProduct: [],
